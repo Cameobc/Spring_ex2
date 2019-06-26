@@ -5,9 +5,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.iu.notice.NoticeService;
+
 @Controller
-@RequestMapping(value = "notice/**")
+@RequestMapping(value = "/notice/**") //절대경로로 적어줘야한다.
 public class NoticeController {
+	
+	private NoticeService noticeService;
+	
+	public NoticeController() {
+		noticeService = new NoticeService();
+	}
 	
 	@RequestMapping(value = "noticeDelete", method = RequestMethod.GET)
 	public ModelAndView noticeDelete(ModelAndView mv) {

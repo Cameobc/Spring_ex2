@@ -1,0 +1,18 @@
+create table notice(
+num number(8),
+title varchar2(400),
+writer varchar2(400),
+contents blob,
+reg_date date,
+hit number(8),
+constraint notice_num_pk primary key (num)
+);
+
+create sequence notice_seq
+start with 1
+nomaxvalue
+nocache
+nocycle;
+
+insert into notice values (notice_seq.nextval, 'happy', 'admin', null, sysdate, 0)
+select * from notice
