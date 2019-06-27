@@ -2,7 +2,7 @@ create table notice(
 num number(8),
 title varchar2(400),
 writer varchar2(400),
-contents blob,
+contents clob,
 reg_date date,
 hit number(8),
 constraint notice_num_pk primary key (num)
